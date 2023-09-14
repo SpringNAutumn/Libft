@@ -2,12 +2,11 @@
 // para que el main compile y lea el memset tenemos que compilarlo todo junto.
 #include <stdio.h>
 
-void *memset(void *b, int c, size_t len);
+size_t strlen(const char *s);
 
 int main (void)
 {   
     char strt[50] = "Hola que tal estamos";
-    memset(strt,'$', 3);
-    printf("%s", strt);
+    printf("%ld", strlen(strt));
     return (0);
 }

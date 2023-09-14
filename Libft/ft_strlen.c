@@ -10,3 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// takes a string as an argument and returns its length
+
+size_t strlen(const char *s)
+{
+    int i = 0;
+    while (s[i])
+    {
+        i++;
+    }
+    return i;
+}

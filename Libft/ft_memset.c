@@ -21,12 +21,11 @@
 void *memset(void *b, int c, size_t len)
 {
     int i;
-
-    // estamos creando un puntero ptr y le estamos dando la direccion de memoria de b.
-
-    unsigned char *ptr = b;
-
+    unsigned char *ptr;
+    
+    ptr = b;
     i = 0;
+
     // nos situamos en el inicio de la cadena. Empezamos a copiar la representacion ascii de c, hasta len, vamos restando len. 
     
     while (i < len)
