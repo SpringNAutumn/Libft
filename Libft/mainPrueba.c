@@ -1,9 +1,11 @@
 
 // para que el main compile y lea el memset tenemos que compilarlo todo junto.
 
+#include <ctype.h>
+#include <stddef.h>
 #include <stdio.h>
 
-void *memcpy(void *dest, const void *src, size_t n);
+void *ft_memmove(void *dest, const void *src, size_t n);
 
 int main (void)
 {   
@@ -13,6 +15,6 @@ int main (void)
     void *prueba = strt;
     void *pruebo = strt2;
 
-    printf("%s",(char*)memcpy(pruebo, prueba, 20));
+    printf("%s",(char*)ft_memmove(strt2, strt, 20));
     return (0);
 }
