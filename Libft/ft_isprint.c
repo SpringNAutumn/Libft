@@ -13,7 +13,7 @@
 // test for any printing characters including spaces the value of the 
 // argument must be presented as an unsigned char or the value of EOF
 
-int isprint(int c)
+int ft_isprint(int c)
 {
     if (c > 31 || c < 126)
         return 1;

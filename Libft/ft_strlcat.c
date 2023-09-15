@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarin-m <gmarin-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 18:36:44 by gmarin-m          #+#    #+#             */
-/*   Updated: 2023/09/13 18:36:44 by gmarin-m         ###   ########.fr       */
+/*   Created: 2023/09/15 17:54:36 by gmarin-m          #+#    #+#             */
+/*   Updated: 2023/09/15 17:54:36 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// takes a string as an argument and returns its length
-
-size_t ft_strlen(const char *s)
+size_t strlcat(char *dst, const char *src, size_t size)
 {
-    int i = 0;
-    while (s[i])
-    {
-        i++;
-    }
-    return i;
+    
 }
