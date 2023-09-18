@@ -38,7 +38,7 @@ size_t strlcpy(char *dst, const char *src, size_t size)
 
         // Duda. hay que copiar hasta dos menos que size. 
         // Uno porque estamos trabahando con indices y otro por que necesitamos insertar el caracter nulo
-        while (i < size - 2)
+        while (i < size - 1)
         {
             dest[i] = src[i];
             i++;

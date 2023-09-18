@@ -1,7 +1,5 @@
 
-## **Los archivos makefile son utilizados cuando necesitamos compilar mas de un archivo c,**
-## **los cuales tienen dependencias unos de otros.**
-## **Tambien tenemos que ver que utilidad real tienen los header files.**
+## **Los archivos makefile son utilizados cuando necesitamos compilar mas de un archivo c, los cuales tienen dependencias unos de otros.Tambien tenemos que ver que utilidad real tienen los header files.**
 
 &nbsp;
 &nbsp;
@@ -54,6 +52,8 @@ Vemos como se está comparando el makefile con herramientas de manjeo de depende
 
 Los lenguajes interpretados no necesitan herramientas analogas al makefile o herramientas como maven. 
 make se podria decir que es un programa. 
+
+Hay que tener en cuenta que se pueden introducir variables. podemos hacer de nuestro makefile un archivo bastante complejo.
 
 
 

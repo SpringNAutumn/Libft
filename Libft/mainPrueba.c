@@ -5,16 +5,15 @@
 #include <stddef.h>
 #include <stdio.h>
 
-void *ft_memmove(void *dest, const void *src, size_t n);
+size_t *ft_strlcat(char* dst, const char *src, size_t size);
+
 
 int main (void)
 {   
     char strt[50] = "Hola que tal estamos";
-    char strt2[50];
+    char strt2[50] = "chavalote";
 
-    void *prueba = strt;
-    void *pruebo = strt2;
-
-    printf("%s",(char*)ft_memmove(strt2, strt, 20));
+    printf("%s",(char*)ft_strlcat(strt, strt2, 19));
+    printf("%s", strt2);
     return (0);
 }
