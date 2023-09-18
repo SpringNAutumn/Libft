@@ -13,7 +13,11 @@
 // we have to be careful not to use sizeof and strlen because one 
 // will give us the full size of the pointer and another one just the size of the string. 
 // strlcat as strlcopy will concatenate, taking into account that they check that size si the max buffer length of dest. 
+
 # include <stddef.h>
+# include <ctype.h>
+
+size_t ft_strlen(const char *s);
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -21,20 +25,21 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
    // Primera. Vamos a reccorrer Dst hasta el caracter de escape.
    // Segunda. comprobamos que src sea menor o igual a size. 
    // Tercera. Mientras el indice de src sea menor a size vamos a copiar y concatenar.
+
     int dstlen = ft_strlen(dst);
+    int srclen = ft_strlen(src);
     int i;
     int c;
 
     c = 0;
     i = dstlen;
 
-// si el dest len es mayor o igual al size aka el des.
+    // si el dest len es mayor o igual al size aka el des.
     if (dstlen >= size)
-        return (ft_strlen(src) + size)
+        return (ft_strlen(src) + size);
     
     else 
     {
-        // esto es para copiar hasta maximo size - 1 ya que tenemos que insertar el caracter nulo al final del string.
         while (src[c] && i < size - 1)
         {
             dst[i] = src[c];
@@ -42,9 +47,9 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
             i ++;
         }
 
-        dst[i] = "\0";
+        dst[i] = '\0';
 
-        // ¿ Que vamos a retornar??
-        return ;
+        // ¿ Que vamos a retornar?? podemos retornar tanto i -1 como dstlen + srclen 
+        return dstlen + srclen;
     }
 }

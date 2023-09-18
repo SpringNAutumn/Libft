@@ -4,16 +4,20 @@
 #include <ctype.h>
 #include <stddef.h>
 #include <stdio.h>
+# include <string.h>
 
-size_t *ft_strlcat(char* dst, const char *src, size_t size);
-
+char *ft_strchr(const char *s, int c);
 
 int main (void)
 {   
-    char strt[50] = "Hola que tal estamos";
-    char strt2[50] = "chavalote";
+     char strttt[40] = "Hol que tl estmos";
 
-    printf("%s",(char*)ft_strlcat(strt, strt2, 19));
-    printf("%s", strt2);
+    ft_strchr(strttt, 'a');
+    printf("%c",*ft_strchr(strttt, 'a'));
+        //printf("%zu",ft_strlcat(strt, strt2, 30));
+        // printf("%s", str);
+        // printf("%zu", ft_strlen(str));
+        // memset (strttt, 0 , sizeof(strttt));
+
     return (0);
 }
