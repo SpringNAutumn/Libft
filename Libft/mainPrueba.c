@@ -6,18 +6,17 @@
 #include <stdio.h>
 # include <string.h>
 
-char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
 
-int main (void)
-{   
-     char strttt[40] = "Hol que tl estmos";
+    int main (void)
+    {   
+        char strttt[40] = "Hola que tal estamos";
 
-    ft_strchr(strttt, 'a');
-    printf("%c",*ft_strchr(strttt, 'a'));
-        //printf("%zu",ft_strlcat(strt, strt2, 30));
-        // printf("%s", str);
-        // printf("%zu", ft_strlen(str));
-        // memset (strttt, 0 , sizeof(strttt));
+        int valorfinal =  ft_strrchr(strttt, 'a') - strttt + 1;
 
-    return (0);
-}
+        printf(" %d tiene que dar 17", valorfinal);
+
+        // Desreferenciando un puntero que es nulo da error de segmentacion. 
+        printf("%c",*ft_strrchr(strttt, 'a'));
+        return (0);
+    }
