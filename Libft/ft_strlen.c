@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stddef.h>
-#include <ctype.h>
-// takes a string as an argument and returns its length
+
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {

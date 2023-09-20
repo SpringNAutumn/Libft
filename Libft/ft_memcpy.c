@@ -14,14 +14,14 @@
 #include <stddef.h>
 
 // copies the values of num bytes from the location pointed to by source directly to the memory block pointed to by destination.
-
-void *memcpy(void *dest, const void *src, size_t n)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
     int i;
 
     i = 0;
     char* det = dest;
     const char* sour = src;
+    
     while (i < n)
     {
         det[i] = sour[i];
