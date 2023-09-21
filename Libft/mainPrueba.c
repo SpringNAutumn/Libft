@@ -15,10 +15,10 @@
     int main (void)
     {   
         char strttt[40] = "Holo que tal ";
-        char strtt2[40] = "Holo que ";
+        char strtt2[40] = " que ";
 
-            int num = ft_memcmp(strttt, strtt2,10);
+        char *ioua = ft_strnstr(strttt, strtt2, 9);
 
-        printf("el primer valor que difiere de la cadena, difiere en  %d ",num);
+        printf("La cadena se encuentra %s", ioua);
         return (0);
     }

@@ -26,6 +26,7 @@ void *ft_bzero(void *s, size_t n);
 int ft_isalnum(int c);
 int ft_isalpha (int c);
 int atoi(const char *nptr);
+char*   ft_strnstr (const char *big, const char *little, size_t len);
 
 #endif
 
