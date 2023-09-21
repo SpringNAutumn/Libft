@@ -1,8 +1,17 @@
-// la libreria en teoria es facil ya que solo hay que nombrar las librerias que vamos a utilizar. podemos ir incluyendolas. 
-// tambien las diferentes definiciones de las funciones que implementamos. 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmarin-m <gmarin-m@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/21 18:37:06 by gmarin-m          #+#    #+#             */
+/*   Updated: 2023/09/21 18:37:06 by gmarin-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef libft
-#define libft
+#ifndef libft_H
+#define libft_H
 
 #include <ctype.h>
 #include <stdio.h>
@@ -26,9 +35,7 @@ void *ft_bzero(void *s, size_t n);
 int ft_isalnum(int c);
 int ft_isalpha (int c);
 int atoi(const char *nptr);
-char*   ft_strnstr (const char *big, const char *little, size_t len);
+char* ft_strnstr (const char *big, const char *little, size_t len);
+int ft_atoi(const char *nptr);
 
 #endif
-
-
-

@@ -9,13 +9,15 @@
 /*   Updated: 2023/09/20 11:04:51 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
+/*
+  char strttt[40] = "Holo que tal ";
+    char strtt2[40] = "que";
+*/
 
 char* 	ft_strnstr (const char *haystack, const char *needle, size_t len)
 {
-    char strttt[40] = "Holo que tal ";
-    char strtt2[40] = "que";
+    // Comprobar cuando el haystack sea nullo nos tiene que devolver el segmentation fault. 
 
     if (*haystack == '\0')
         return (char*)needle;
@@ -23,17 +25,15 @@ char* 	ft_strnstr (const char *haystack, const char *needle, size_t len)
     if (len == 0)
         return 0;
 
-    // lo que quede por comparar debe ser mayor o igual al length de needle porque si no comparará toda la cadena
     int len_need = ft_strlen(needle);
 
     int i;
     i = 0;
-    while (i < len && len - i >= len_need) 
+    while (i < len && len - i >= len_need && *haystack != '\0') 
     {
         if (ft_strncmp(haystack + i , needle, len_need) == 0)
-            return ((char*)haystack + i);
+            return((char*)haystack + i);
         i ++;
     }
-
     return (0);
 }

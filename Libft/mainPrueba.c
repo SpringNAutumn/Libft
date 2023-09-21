@@ -13,12 +13,11 @@
 #include "libft.h"
 
     int main (void)
-    {   
-        char strttt[40] = "Holo que tal ";
-        char strtt2[40] = " que ";
+    {
+        char strt[20] = "9934";
+        int ioua = ft_atoi(strt);
 
-        char *ioua = ft_strnstr(strttt, strtt2, 9);
 
-        printf("La cadena se encuentra %s", ioua);
+        printf("El charito pasado a ft_atoii essss... brbrbbrbrb : %d", ioua);
         return (0);
     }

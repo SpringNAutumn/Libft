@@ -15,7 +15,6 @@
 
 int ft_strlen(const char* s);
 
-// be careful to return all possible cases. 
 int ft_strncmp(const char*s1, const char *s2, size_t n)
 {
     int i;
@@ -27,5 +26,6 @@ int ft_strncmp(const char*s1, const char *s2, size_t n)
             return s1[i] - s2[i];
         i++;
     }
+    
     return 0;
 }
