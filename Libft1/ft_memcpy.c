@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mainPrueba.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarin-m <gmarin-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 10:06:58 by gmarin-m          #+#    #+#             */
-/*   Updated: 2023/09/20 10:06:58 by gmarin-m         ###   ########.fr       */
+/*   Created: 2023/09/14 15:44:24 by gmarin-m          #+#    #+#             */
+/*   Updated: 2023/09/14 15:44:24 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ctype.h>
+#include <stddef.h>
 
-    int main (void)
+// copies the values of n bytes from the location pointed to by source directly to the memory block pointed to by destination.
+void *ft_memcpy(void *dest, const void *src, size_t n)
+{
+    int i;
+
+    i = 0;
+    char* det = dest;
+    const char* sour = src;
+    
+    while (i < n)
     {
-        char strt[20] = "9934";
-        int ioua = ft_atoi(strt);
-
-
-        printf("El charito pasado a ft_atoii essss... brbrbbrbrb : %d", ioua);
-        return (0);
+        det[i] = sour[i];
+        i++;
     }
+    return dest;
+}

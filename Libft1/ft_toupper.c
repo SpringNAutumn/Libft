@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarin-m <gmarin-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 15:44:24 by gmarin-m          #+#    #+#             */
-/*   Updated: 2023/09/14 15:44:24 by gmarin-m         ###   ########.fr       */
+/*   Created: 2023/09/18 15:30:03 by gmarin-m          #+#    #+#             */
+/*   Updated: 2023/09/18 15:30:03 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stddef.h>
+// pasa el valor ASCII del caracter y capitaliza la letra en caso de que sea minuscula. 
 
-// copies the values of num bytes from the location pointed to by source directly to the memory block pointed to by destination.
-void *ft_memcpy(void *dest, const void *src, size_t n)
+int ft_toupper (int c)
 {
-    int i;
-
-    i = 0;
-    char* det = dest;
-    const char* sour = src;
-    
-    while (i < n)
-    {
-        det[i] = sour[i];
-        i++;
-    }
-    return dest;
+    if (c > 96 && c < 123)
+        c -= 32;
 }

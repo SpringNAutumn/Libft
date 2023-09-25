@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   mainPrueba.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarin-m <gmarin-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 15:30:03 by gmarin-m          #+#    #+#             */
-/*   Updated: 2023/09/18 15:30:03 by gmarin-m         ###   ########.fr       */
+/*   Created: 2023/09/20 10:06:58 by gmarin-m          #+#    #+#             */
+/*   Updated: 2023/09/20 10:06:58 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// pasa el valor ASCII del caracter y capitaliza la letra en caso de que sea minuscula. 
+#include "libft.h"
 
-int ft_toupper (int c)
-{
-    if (c > 96 && c < 123)
-        c -= 32
-}
+    int main (void)
+    {
+        char strt[20] = "9934";
+        int ioua = ft_atoi(strt);
+
+        printf("El charito pasado a ft_atoii essss... brbrbbrbrb : %d", ioua);
+        return (0);
+    }
+
+    // void *calloc (size_t count size_t size);
