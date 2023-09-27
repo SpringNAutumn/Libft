@@ -9,16 +9,14 @@
 /*   Updated: 2023/09/20 10:06:58 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
     int main (void)
     {
-        char strt[20] = "9934";
-        int ioua = ft_atoi(strt);
-
-        printf("El charito pasado a ft_atoii essss... brbrbbrbrb : %d", ioua);
+        char substr[] = "hola que tal";
+        
+        char *nueva = ft_substr(substr, 2, 6);
+        printf(" la string creada es: %s\n", nueva);
         return (0);
     }
-
     // void *calloc (size_t count size_t size);
