@@ -14,8 +14,8 @@
     int main (void)
     {
         char substr[] = "hola que tal";
-        
         char *nueva = ft_substr(substr, 2, 6);
+        
         printf(" la string creada es: %s\n", nueva);
         return (0);
     }
