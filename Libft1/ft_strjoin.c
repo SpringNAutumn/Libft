@@ -6,24 +6,37 @@
 /*   By: gmarin-m <gmarin-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:04:51 by gmarin-m          #+#    #+#             */
-/*   Updated: 2023/09/27 12:41:39 by gmarin-m         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:19:47 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// se utiliza malloc. 
-
-// la primera string.    //s3 es la string a añadir a s1
+// vamos a concatenar dos strings, la segunda se concatenará a la primera 
+// se retornara la nueva string o NULL si falla la reserva de memoria
 char *ft_strjoin (char const *s1, char const *s2)
 {
     char *s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-
-    // devuelve null si falla la reserva de memoria.
-
-    // reservamos con malloc y devolvemos una nueva string que resulta de
-    // la concatenacion de 's1' y 's2'.
-
+    if (!s3)
+        return NULL;
     
-return s3;
+    int i = 0;
+    int o = 0;
+
+    while (s1[i])
+    {
+        s3[i] = s1[i];
+        i++;
+    }
+
+    while(s2[o])
+    {
+       s3[i] = s2[o];
+       o ++;
+       i ++;
+    }
+
+    s3[i] = '\0';
+    
+    return s3;
 }
