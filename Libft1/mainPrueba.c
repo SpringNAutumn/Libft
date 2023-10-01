@@ -14,8 +14,9 @@
     int main (void)
     {
         char str1[] = "hola que tal";
-        char str2[] = " como estas";
-        char *str3 = malloc (sizeof(str1) + sizeof(str2) + 1);
+        char set[] = " como estas";
+
+        char *str3 = ft_strtrim();
 
         str3 = ft_strjoin(str1,str2);
 
