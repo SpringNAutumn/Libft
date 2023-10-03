@@ -13,13 +13,11 @@
 
     int main (void)
     {
-        char str1[] = "hola que tal";
-        char set[] = " como estas";
+        char* str1 = "hola que tal estamos";
+        char** str2;
 
-        char *str3 = ft_strtrim();
+        str2 = ft_split (str1, 'a');
 
-        str3 = ft_strjoin(str1,str2);
-
-        printf(" la string resultate de la concatenacion es: %s\n",str3);
+        printf ("Vamos a imprimir la primera subistringi: %s" , *str2);
         return (0);
     }

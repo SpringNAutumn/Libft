@@ -12,8 +12,9 @@
 
 #include "libft.h"
 
-// vamos a concatenar dos strings, la segunda se concatenará a la primera 
-// se retornara la nueva string o NULL si falla la reserva de memoria
+// vamos a concatenar dos strings, la segunda se concatenará a la primera .
+// se retornara la nueva string o NULL si falla la reserva de memoria.
+
 char *ft_strjoin (char const *s1, char const *s2)
 {
     char *s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);

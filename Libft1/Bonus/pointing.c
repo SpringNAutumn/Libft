@@ -17,31 +17,29 @@ struct node
 {
     int data;
     struct node *link;
-} head;
-
-
+};
 
 // vamos a intentar crear una funcion para asignar nuevos nodos. 
+struct node* createNode (int data)
+{
+    struct node* newNode = malloc (sizeof(struct node));
 
+    newNode -> data = data;
+    newNode -> link = NULL;
 
-
+    return newNode;
+}
 
 int main () 
 {
-    head = NULL;
-                    // asignamos la ,emoria al struct.  
-    head = malloc (sizeof (struct node));
-    
-    head -> data = 45;
-    // esto deberiamos hacerlo despues de allocar memoria al nodo next. 
-    head -> link = next;
-
-            // asignamos mas memoria. 
-    next = malloc (sizeof(struct node));
-        // asignamos un valor a data. 
-    next -> data = 98;
-    next -> link = NULL;
+    /*
+         Como haciamos en java cuando creemos listas enlazadas. 
+         tenemos que crear una cabeza de lista y guardarla. Luego gracias a la funcion creada 
+         vamos añadiendo elementos a la lista.
+    */
+    struct node* head = createNode(50);
+    struct node* first = createNode(100);
+    head -> link = first;
 
     return 0;
-
 }

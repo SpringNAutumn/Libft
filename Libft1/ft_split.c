@@ -9,43 +9,52 @@
 /*   Updated: 2023/09/25 20:21:12 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+# include "libft.h"
 
-// s es la cadena a separar. 
+int num_point (const char *s, char c);
 
-// Se devuelve el array de nuevas strings resultante de la separación o obviamente null si falla la reserva de memoria.
-
-/* descripción: 
-    Reserva utilizando malloc un array de string resultante de separar la strins 's' en substrings utuluzando el caracter 'c' como delimtador.
-    El array debe terminar con un puntero NULL.
-*/
-
-// The ft_split function takes a string s and a delimiter character c as input, 
-// and returns an array of strings that are separated by the delimiter character. 
-// The function first counts the number of substrings in the input string, then allocates memory for the result array, 
-// and finally splits the input string into substrings and stores them in the result array. The result array is terminated 
-// with a NULL pointer.
-
-char *str1 = "hola cmigoc que tac todo";
-char c = 'c';
 
 char **ft_split (char const *s, char c)
 {
+    int n_subs = 0;
+    int o = 0;
+    int k = 0;
+    int i = 0;
+    char **strs;
 
+    n_subs = num_point(s,c);
+
+    // Aqui estamos reservando n_subs pero no con el length de cada cadena de caracteres. 
+    // Tenemos que liberar para cada subcadena
+    strs = malloc(n_subs * (sizeof(char *) + 1));
+
+    if (strs == NULL)
+        return NULL;
+
+    while (s[o])
+    {
+        if (s[o] == c || !s[o + 1])
+        {
+            strs[k ++] = ft_substr(s, i, o);
+        }
+            i = o + 1;
+    }
     
-    int n_pointers;
-    int i ;
+    o ++; 
+    strs[k] = NULL;
+    return (strs);
+}
 
-    while (str[i])
-
-    char **strs = malloc(n_pointers * sizeof(char *));
+int num_point (const char *ncch, char c)
+{
+    int num = 0;
+    int i = 0;
     
-    // Lo que tenemos que hacer tambien es reservar con malloc.
-    // tenemos que contar el numero de caracteres delimitadores.
-    // por ejemplo con una c tenemos dos subcadenas. Pero con dos c´s tendremos.
-    // podemos haer un contador que en cuanto se encuentre el caracter especificado pare. y cree un array.
-
-
-
-
-
+    while (ncch[i])
+    {
+        if (ncch[i] == c)
+            num ++;
+        i ++;
+    }
+    return num;
 }
