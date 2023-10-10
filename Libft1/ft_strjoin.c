@@ -15,29 +15,29 @@
 // vamos a concatenar dos strings, la segunda se concatenará a la primera .
 // se retornara la nueva string o NULL si falla la reserva de memoria.
 
-char *ft_strjoin (char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char *s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-    if (!s3)
-        return NULL;
-    
-    int i = 0;
-    int o = 0;
+	int		i;
+	int		o;
+	char	*s3
+	
+	s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	i = 0;
+	o = 0;
+	if (!s3)
+		return (NULL);
 
-    while (s1[i])
-    {
-        s3[i] = s1[i];
-        i++;
-    }
-
-    while(s2[o])
-    {
-       s3[i] = s2[o];
-       o ++;
-       i ++;
-    }
-
-    s3[i] = '\0';
-    
-    return s3;
+	while (s1[i])
+	{
+		s3[i] = s1[i];
+		i ++;
+	}
+	while (s2[o])
+	{
+		s3[i] = s2[o];
+		o ++;
+		i ++;
+	}
+	s3[i] = '\0';
+	return (s3);
 }

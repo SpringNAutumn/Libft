@@ -17,23 +17,21 @@
 
 char* 	ft_strnstr (const char *haystack, const char *needle, size_t len)
 {
-    // Comprobar cuando el haystack sea nullo nos tiene que devolver el segmentation fault. 
+	   int len_need;
+	   int i;
 
+	   len_need = ft_strlen(needle);
+	   i = 0;
     if (*haystack == '\0')
-        return (char*)needle;
+		return ((char*)needle);
 
     if (len == 0)
         return 0;
-
-    int len_need = ft_strlen(needle);
-
-    int i;
-    i = 0;
-    while (i < len && len - i >= len_need && *haystack != '\0') 
-    {
-        if (ft_strncmp(haystack + i , needle, len_need) == 0)
-            return((char*)haystack + i);
-        i ++;
-    }
-    return (0);
+	while (i < len && len - i >= len_need && *haystack != '\0') 
+	{
+		if (ft_strncmp(haystack + i , needle, len_need) == 0)
+			return ((char*)haystack + i);
+		i ++;
+	}
+	return (0);
 }

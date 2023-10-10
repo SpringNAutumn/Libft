@@ -13,20 +13,18 @@
 #include <stddef.h>
 #include <ctype.h>
 
-size_t ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 
-    // returns the last occurrence of the character c in the string s.
-    char *ft_strrchr(const char *s, int c)
-    {
-        int i;
+char	*ft_strrchr(const char *s, int c)
+{
+	int	i;
 
-        i = ft_strlen(s) - 1;
-        
-        while ( i >= 0)
-        {
-            if  (s[i] == c) 
-                return (char *)s + i;
-            i --;
-        }
-        return 0;
-    }
+	i = ft_strlen(s) - 1;
+	while (i >= 0)
+	{
+		if (s[i] == c)
+			return ((char*)s + i);
+		i --;
+	}
+	return (0);
+}

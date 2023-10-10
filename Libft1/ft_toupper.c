@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// pasa el valor ASCII del caracter y capitaliza la letra en caso de que sea minuscula. 
-
-int ft_toupper (int c)
+int	ft_toupper (int c)
 {
-    if (c > 96 && c < 123)
-        c -= 32;
+	if (c > 96 && c < 123)
+		c -= 32;
 }
