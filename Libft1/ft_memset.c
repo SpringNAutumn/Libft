@@ -10,28 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// The memset function writes len bytes of value c converted to an unsigned char to the string B.
-
 #include <ctype.h>
 #include <stddef.h>
 
- // copia hasta los primeros len caracteres el caracter c a la string que apunta la varauable b 
- // el puntero es un puntero void por lo que no tiene tipo de dato. si lo queremos utilizar tendremos que castearlo.
-
 void *ft_memset(void *b, int c, size_t len)
 {
-    int i;
-    unsigned char *ptr;
-    
-    ptr = b;
-    i = 0;
-
-    // Nos situamos en el inicio de la cadena. 
-    // Empezamos a copiar la representacion ascii de c, hasta len, vamos restando len. 
-    
-    while (i < len)
-    {
-        ptr[i] = c;
-        i ++;
-    }
+	int				i;
+    unsigned char	*ptr;
+	
+	ptr = b;
+	i = 0;
+	while (i < len)
+	{
+		ptr[i] = c;
+		i ++;
+	}
 }
