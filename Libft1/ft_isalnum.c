@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if (ft_digit(c) != 0 && ft_isalpha(c) != 0)
-        return 1;
-    else return 0;
+	if (ft_digit(c) != 0 && ft_isalpha(c) != 0)
+		return (1);
+	else
+		return (0);
 }

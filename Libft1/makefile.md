@@ -6,7 +6,6 @@
 &nbsp;
 &nbsp;
 
-
 Makefile is a set of commands with variable names and targets 
 to create the object file. The main idea of this file is to specify 
 the dependencies of a file.

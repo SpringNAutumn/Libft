@@ -12,16 +12,16 @@
 #include <ctype.h>
 #include <stddef.h>
 
-void *ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
-    int i;
-    unsigned char *ptr;
+	int				i;
+	unsigned char	*ptr;
 
-    ptr = b;
-    i = 0;
-    while (i < len)
-    {
-        ptr[i] = '\0';
-        i ++;
-    }
+	ptr = b;
+	i = 0;
+	while (i < len)
+	{
+		ptr[i] = '\0';
+		i ++;
+	}
 }
