@@ -7,5 +7,4 @@ SOURCES =
 
 // variable objetos 	// estto 
 		OBJECTS 	= 	$(SOURCES:.c=.o)
-
-
+		

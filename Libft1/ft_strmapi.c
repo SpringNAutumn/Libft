@@ -9,3 +9,25 @@
 /*   Updated: 2023/09/25 20:21:21 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+size_t	ft_strlen(const char *s);
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char ))
+{
+	int		i;
+	char	*sol;
+	int		len;
+
+	len = ft_strlen(s);
+	sol = malloc(sizeof(char) * (len + 1));
+	if (sol == NULL)
+		return (sol);
+
+	while (i < len)
+	{
+		sol [i] = f(i, s[i]);
+		i++;
+	}
+	sol[i] = '\0';
+	return (sol);
+}

@@ -10,3 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+	char			*aux;
+
+	i = 0;
+	aux = (char *)s;
+	while (s[i])
+	{
+		f(i, aux + i);
+		i ++;
+	}
+}
