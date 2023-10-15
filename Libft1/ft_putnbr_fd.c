@@ -11,13 +11,25 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-// Lo primero es que no se pueden añadir numeros en el write.
-// Los tenemos que castear a chars. 
+static int	recursion(int n, int fd)
+{
+	if (n > 0)
+	{
+		recursion (n / 10, fd);
+		aux = (n % 10) + '0';
+		write (fd, &aux, 1);
+	}
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, &n, 1);
+	if (n < 0)
+	{
+		write (fd, "-", 1);
+		n *= -1;
+	}
+	if (n == 0)
+		write (fd, '0', 1);
+	else
+		recursion(n, fd);
 }
-
-// tenemos que hacer una funcion auxiliar recursiva.
-	// que itere los numeros. 
