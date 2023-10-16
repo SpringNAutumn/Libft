@@ -9,11 +9,8 @@
 /*   Updated: 2023/09/20 11:04:51 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-/*
-  char strttt[40] = "Holo que tal ";
-    char strtt2[40] = "que";
-*/
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

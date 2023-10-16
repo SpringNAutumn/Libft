@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-// ver diferencias entre el codigo.
-
 char	**ft_split(char const *s, char c)
 {
 	int		n_subs;
@@ -70,7 +68,6 @@ static int	filler(char *str, char *s, int i, int sublen)
 	}
 	sol[j] = '\0';
 	return (j);
-
 }
 
 static char	**freeing(char **strs, int len_cadena)

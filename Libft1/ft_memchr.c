@@ -9,8 +9,7 @@
 /*   Updated: 2023/09/18 19:32:54 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <ctype.h>
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

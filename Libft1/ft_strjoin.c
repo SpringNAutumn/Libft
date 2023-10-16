@@ -12,9 +12,6 @@
 
 #include "libft.h"
 
-// vamos a concatenar dos strings, la segunda se concatenará a la primera .
-// se retornara la nueva string o NULL si falla la reserva de memoria.
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;

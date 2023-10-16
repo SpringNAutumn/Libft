@@ -25,8 +25,6 @@ t_list *ft_lstnew(void *content)
     t_list *nodo;
     nodo = malloc (sizeof(t_list));
 
-    // devolvemos null si falla la memoria
-
     if (!nodo)
         return (nodo);
 
@@ -35,9 +33,6 @@ t_list *ft_lstnew(void *content)
 
     return (nodo);
 }
-
-/*
-
 Nombre de función
 
     ft_lstadd_front

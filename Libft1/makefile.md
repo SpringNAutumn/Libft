@@ -55,11 +55,3 @@ Los lenguajes interpretados no necesitan herramientas analogas al makefile o her
 make se podria decir que es un programa. 
 
 Hay que tener en cuenta que se pueden introducir variables. podemos hacer de nuestro makefile un archivo bastante complejo.
-
-
-
-
-
-
-
-
