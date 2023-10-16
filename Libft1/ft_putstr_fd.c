@@ -12,9 +12,6 @@
 #include "libft.h"
 #include <stdio.h>
 
-// s: La string a enviar.
-// fd: El file descriptor sobre el que escribir.
-
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
