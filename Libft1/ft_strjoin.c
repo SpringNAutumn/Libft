@@ -19,14 +19,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		o;
-	char	*s3
-	
+	char	*s3;
+
 	s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	i = 0;
 	o = 0;
 	if (!s3)
 		return (NULL);
-
 	while (s1[i])
 	{
 		s3[i] = s1[i];

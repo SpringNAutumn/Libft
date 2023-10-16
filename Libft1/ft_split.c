@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-// rehacer toda la funcion ya que esta hecha mierda. 
+// ver diferencias entre el codigo.
 
 char	**ft_split(char const *s, char c)
 {
@@ -19,12 +19,10 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		i;
 	char	**strs;
-	int		len_cadena;
 
-	j = 0;
 	i = 0;
-	n_subs = countstr(s, c);
-	strs = malloc(n_subs * (sizeof(char *) + 1));
+	j = 0;
+	strs = malloc (sizeof(*strs) * (countstr(s, c) + 1));
 	if (!strs)
 		return (NULL);
 	while (s[i])
@@ -33,8 +31,8 @@ char	**ft_split(char const *s, char c)
 			i ++;
 		if (s[i] == '\0')
 			break ;
-		len_cadena = len_sub(s, c, i);
-		strs [j] = malloc((sizeof(char) * len_cadena) + 1);
+		n_subs = len_sub(s, c, i);
+		strs [j] = malloc((sizeof(char) * n_subs) + 1);
 		if (!Strs[j])
 			return (freeing(strs, i));
 		i += filler(strs, s, i, len_cadena);
@@ -98,17 +96,12 @@ static int	countstr(char const *s, char c)
 	ult = c;
 	i = 0;
 	cont = 0;
-
 	while (*(s + i))
 	{
-
 		if (ult == c && s[i] != c)
-		{
-			cont++;
-		}
+			cont ++;
 		ult = s[i];
 		i++;
-
 	}
 	return (cont);
 }

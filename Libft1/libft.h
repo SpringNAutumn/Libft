@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	libft_H
-#define	libft_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include <ctype.h>
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
+# include <ctype.h>
+# include <stdio.h>
+# include <stddef.h>
+# include <stdlib.h>
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char*s1, const char *s2, size_t n);
@@ -53,13 +53,10 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-
-// hacer el bonus aqui.
-
-typedef struct	s_list 
+typedef struct s_list
 {
-	void	*content;
-	struct	s_list *next;
+	void			*content;
+	struct s_list	*next;
 }	t_list;
 
-# endif
+#endif

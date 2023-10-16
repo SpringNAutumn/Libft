@@ -22,7 +22,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char ))
 	sol = malloc(sizeof(char) * (len + 1));
 	if (sol == NULL)
 		return (sol);
-
 	while (i < len)
 	{
 		sol [i] = f(i, s[i]);
