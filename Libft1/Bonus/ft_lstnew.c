@@ -6,7 +6,7 @@
 /*   By: gmarin-m <gmarin-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:20:39 by gmarin-m          #+#    #+#             */
-/*   Updated: 2023/10/16 18:38:51 by gmarin-m         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:59:11 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_list	*ft_lstnew(void *content)
 	node = malloc(sizeof(t_list));
 	if (!node)
 		return (node);
-
 	newnode->content = content;
 	newnode->next = NULL;
 	return (node);

@@ -45,9 +45,6 @@ Nombre de función
 */
 
 
-
-
-
  // tenemos que añadir al final de lst el nuevo nodo new.
     // para eso haremos un bucle que itere hasta que el nodo next sea null y en el metera new. 
 
