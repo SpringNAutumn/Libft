@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+int	checks1(char *s1, char *set);
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		ini;
@@ -44,7 +46,7 @@ int	checks1(char *s1, char *set)
 	i = 0;
 	while (set[i])
 	{
-		if (*s1 == set[i])
+		if (s1 == set[i])
 			return (42);
 		else
 			i ++;

@@ -9,7 +9,9 @@
 /*   Updated: 2023/09/25 20:21:00 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	ft_itoa(int n)
+#include "libft.h"
+
+char	*ft_itoa(int n)
 {
 	int		cont;
 	int		i;
@@ -23,9 +25,9 @@ char	ft_itoa(int n)
 		cont ++;
 	}
 	if (n < 0)
-		str = malloc (sizeof (*char) * (cont + 1));
+		str = malloc (sizeof (char *) * (cont + 1));
 	else
-		str = malloc (sizeof (*char) * cont);
+		str = malloc (sizeof (char *) * cont);
 	while (n % 10 != 0)
 	{
 		str[i] = n / (10 * cont - 1);
