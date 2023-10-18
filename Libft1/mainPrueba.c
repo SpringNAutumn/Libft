@@ -20,8 +20,8 @@ int main (void)
 	t_list *nuevo;
 	t_list *nuevi;
 
-	nuevo =(t_list) ft_lstnew("hola");
-	nuevi =(t_list) ft_lstnew("que tal");
+	nuevo =  ft_lstnew("hola");
+	nuevi =  ft_lstnew("que tal");
 	
 	ft_lstadd_front(&nuevo, nuevi);
 
