@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarin-m <gmarin-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 18:20:39 by gmarin-m          #+#    #+#             */
-/*   Updated: 2023/10/16 18:59:11 by gmarin-m         ###   ########.fr       */
+/*   Created: 2023/10/16 19:15:27 by gmarin-m          #+#    #+#             */
+/*   Updated: 2023/10/18 20:36:26 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*node;
+	t_list	*new;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (node);
-	newnode->content = content;
-	newnode->next = NULL;
-	return (node);
+	new = (t_list *) malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

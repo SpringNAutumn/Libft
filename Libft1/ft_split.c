@@ -11,35 +11,6 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
-{
-	int		n_subs;
-	int		j;
-	int		i;
-	char	**strs;
-
-	i = 0;
-	j = 0;
-	strs = malloc (sizeof(*strs) * (countstr(s, c) + 1));
-	if (!strs)
-		return (NULL);
-	while (s[i])
-	{
-		while (s[i] == c)
-			i ++;
-		if (s[i] == '\0')
-			break ;
-		n_subs = len_sub(s, c, i);
-		strs [j] = malloc((sizeof(char) * n_subs) + 1);
-		if (!Strs[j])
-			return (freeing(strs, i));
-		i += filler(strs, s, i, len_cadena);
-		j ++;
-	}
-	sol[j] = NULL;
-	return (strs);
-}
-
 static int	len_sub(char const *s, char c, char len)
 {
 	int	sol;
@@ -55,7 +26,7 @@ static int	len_sub(char const *s, char c, char len)
 	return (sol);
 }
 
-static int	filler(char *str, char *s, int i, int sublen)
+static int	filler(char *str, const char *s, int i, int sublen)
 {
 	int	j;
 
@@ -64,18 +35,18 @@ static int	filler(char *str, char *s, int i, int sublen)
 	{
 		str[j] = s[i];
 		j ++;
-		pos ++;
+		i ++;
 	}
-	sol[j] = '\0';
+	str[j] = '\0';
 	return (j);
 }
 
-static char	**freeing(char **strs, int len_cadena)
+static char	**freeing(char **strs, int longitud)
 {
 	int	i;
 
 	i = 0;
-	while (i < len_cadena)
+	while (i < longitud)
 	{
 		free(strs[i]);
 		i ++;
@@ -101,4 +72,33 @@ static int	countstr(char const *s, char c)
 		i++;
 	}
 	return (cont);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		n_subs;
+	int		j;
+	int		i;
+	char	**strs;
+
+	i = 0;
+	j = 0;
+	strs = malloc (sizeof(*strs) * (countstr(s, c) + 1));
+	if (!strs)
+		return (NULL);
+	while (s[i])
+	{
+		while (s[i] == c)
+			i ++;
+		if (s[i] == '\0')
+			break ;
+		n_subs = len_sub(s, c, i);
+		strs [j] = malloc((sizeof(char) * n_subs) + 1);
+		if (!strs[j])
+			return (freeing(strs, j));
+		i += filler(strs[j], s, i, n_subs);
+		j ++;
+	}
+	strs[j] = NULL;
+	return (strs);
 }

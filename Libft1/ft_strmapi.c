@@ -11,6 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+<<<<<<< HEAD
+=======
+
+size_t	ft_strlen(const char *s);
+>>>>>>> 4120023c8443d4c4988cb67e3285ef0a57726deb
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char ))
 {

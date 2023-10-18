@@ -9,10 +9,11 @@
 /*   Updated: 2023/09/13 13:25:50 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
-	if (ft_digit(c) != 0 && ft_isalpha(c) != 0)
+	if (ft_isdigit(c) != 0 && ft_isalpha(c) != 0)
 		return (1);
 	else
 		return (0);
