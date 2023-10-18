@@ -24,6 +24,7 @@ static int	recursion(int n, int fd)
 		aux = (n % 10) + '0';
 		write (fd, &aux, 1);
 	}
+	return (0);
 }
 
 void	ft_putnbr_fd(int n, int fd)
