@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// return the size of the linked list. should we evaluate if the list is null? 
-
 int	ft_lstsize(t_list *lst)
 {
 	int	cont;

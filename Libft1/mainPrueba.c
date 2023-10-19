@@ -12,29 +12,26 @@
 
 #include "libft.h"
 
-void print_list(t_list *list);
+void	print_list(t_list *list);
 
-
-int main (void)
+int	main(void)
 {
-	t_list *nuevo;
-	t_list *nuevi;
+	t_list	*nuevo;
+	t_list	*nuevi;
 
 	nuevo =  ft_lstnew("hola");
 	nuevi =  ft_lstnew("que tal");
-	
+
 	ft_lstadd_front(&nuevo, nuevi);
-
 	print_list(nuevo);
-
 	return (0);
 }
 
-void print_list(t_list *list)
+void	print_list(t_list *list)
 {
-    while (list != NULL)
-    {
-        printf("%s\n", (char *)list->content);
-        list = list->next;
-    }
+	while (list != NULL)
+	{
+		printf("%s\n", (char *)list->content);
+		list = list->next;
+	}
 }

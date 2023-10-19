@@ -47,7 +47,7 @@ int	checks1(const char *s1, const char *set)
 	i = 0;
 	while (set[i])
 	{
-		if (s1 == set[i])
+		if (*s1 == set[i])
 			return (42);
 		else
 			i ++;
@@ -55,13 +55,13 @@ int	checks1(const char *s1, const char *set)
 	return (0);
 }
 
-int main (void)
+int	main (void)
 {
-char *str1 = "hola que tal buenas tardes";
-char set = "a";
+char	*str1 = "hola que tal buenas tardes";
+char	*set = (char*)'a';
 
-ft_strtrim(str1, (const char)set);
+ft_strtrim(str1, set);
 printf("%s", str1);
 
-return (0);
+return	(0);
 }

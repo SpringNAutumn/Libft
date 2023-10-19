@@ -61,7 +61,6 @@ typedef struct s_list
 }	t_list;
 
 
-// comienzo del bonus.
 
 
 t_list	*ft_lstnew(void *content);
