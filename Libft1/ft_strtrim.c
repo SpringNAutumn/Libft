@@ -57,11 +57,11 @@ int	checks1(const char *s1, const char *set)
 
 int	main (void)
 {
-char	*str1 = "hola que tal buenas tardes";
-char	*set = (char*)'a';
+	char	*str1 = "hola que tal buenas tardes";
+	char	*set = (char*)'a';
 
-ft_strtrim(str1, set);
-printf("%s", str1);
+	ft_strtrim(str1, set);
+	printf("%s", str1);
 
-return	(0);
+	return	(0);
 }
