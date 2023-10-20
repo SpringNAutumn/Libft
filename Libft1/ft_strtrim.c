@@ -27,17 +27,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ini = 0;
 	while (s1[ini] && checks1 (s1 + ini, set) == 42)
 		ini ++;
-	while (checks1 (s1 + ini, set) == 42 && fin > ini)
+	while (checks1 (s1 + fin, set) == 42 && fin > ini)
 		fin --;
 	if (ini > fin)
 		return (ft_strdup (""));
 	s3 = malloc (fin - ini + 2);
 	while (ini <= fin)
 	{
-		s3[i++] == s1[ini];
+		s3[i++] = s1[ini];
 		ini ++;
 	}
 	s3[i] = '\0';
+	return (s3);
 }
 
 int	checks1(const char *s1, const char *set)
@@ -53,15 +54,4 @@ int	checks1(const char *s1, const char *set)
 			i ++;
 	}
 	return (0);
-}
-
-int	main (void)
-{
-	char	*str1 = "hola que tal buenas tardes";
-	char	*set = (char*)'a';
-
-	ft_strtrim(str1, set);
-	printf("%s", str1);
-
-	return	(0);
 }
