@@ -11,27 +11,45 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+
 char	*ft_itoa(int n)
 {
 	int		cont;
 	int		i;
 	char	*str;
+	int		ni;
 
+	ni = n;
 	cont = 1;
 	i = 0;
-	while (n % 10 != 0)
+	while (ni / 10 != 0)
 	{
-		n = n / 10;
+		ni = n / 10;
 		cont ++;
 	}
 	if (n < 0)
+	{
 		str = malloc (sizeof (char *) * (cont + 1));
+		str[i] = '-';
+		i++;
+	}
 	else
 		str = malloc (sizeof (char *) * cont);
-	while (n % 10 != 0)
+	str[cont] = '\0';
+	cont --;
+	if (n == 0)
+		str[0] = 0;
+	while (n / 10 != 0)
 	{
-		str[i] = n / (10 * cont - 1);
+		str[i] = n / (10 * cont);
 		n = n / 10;
+		cont --;
 	}
 	return (str);
+}
+
+void auxi (char *str)
+{
+	
+
 }

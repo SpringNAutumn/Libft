@@ -1,12 +1,14 @@
 #include "libft.h"
+#include <stdio.h>
 
-// la prueba atoi 
-// recordemos que el atoi convertia de char a int una cadena de digitos.
-int	ft_atoi(const char *nptr);
+// prueba para el split
 
-int	main(void)
+char	*ft_itoa(int n);
+
+int	main(int argc, char *argv[])
 {
-	int n = ft_atoi("123123");
-	printf("%d",n);
+	int i = 0;
+	while (strtt[i] != NULL)
+		printf("%s",strtt[i]);
 	return (0);
 }
