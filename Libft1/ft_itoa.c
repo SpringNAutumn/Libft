@@ -12,6 +12,8 @@
 #include "libft.h"
 
 
+char	*mallockin(char *str, int cont, int n, int *i);
+
 char	*ft_itoa(int n)
 {
 	int		cont;
@@ -27,14 +29,7 @@ char	*ft_itoa(int n)
 		ni = n / 10;
 		cont ++;
 	}
-	if (n < 0)
-	{
-		str = malloc (sizeof (char *) * (cont + 1));
-		str[i] = '-';
-		i++;
-	}
-	else
-		str = malloc (sizeof (char *) * cont);
+	str = mallockin(str, cont, n, &i);
 	str[cont] = '\0';
 	cont --;
 	if (n == 0)
@@ -48,8 +43,15 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-void auxi (char *str)
+char	*mallockin(char *str, int cont, int n, int *i)
 {
-	
-
+	if (n < 0)
+	{
+		str = malloc (sizeof (char *) * (cont + 2));
+		str[*i] = '-';
+		*i += 1;
+	}
+	else
+		str = malloc (sizeof (char *) * cont + 1);
+	return (str);
 }
