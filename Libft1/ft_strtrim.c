@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-int	checks1(char *s1, char *set);
+int	checks1(const char *s1, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -24,29 +25,30 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	fin = ft_strlen(s1) - 1;
 	ini = 0;
-	while (s1 [ini] && checks1 (s1[ini], set) == 42)
+	while (s1[ini] && checks1 (s1 + ini, set) == 42)
 		ini ++;
-	while (checks1 (s1[fin], set) == 42 && fin > ini)
+	while (checks1 (s1 + fin, set) == 42 && fin > ini)
 		fin --;
 	if (ini > fin)
 		return (ft_strdup (""));
 	s3 = malloc (fin - ini + 2);
 	while (ini <= fin)
 	{
-		s3[i++] == s1[ini];
+		s3[i++] = s1[ini];
 		ini ++;
 	}
 	s3[i] = '\0';
+	return (s3);
 }
 
-int	checks1(char *s1, char *set)
+int	checks1(const char *s1, const char *set)
 {
 	int	i;
 
 	i = 0;
 	while (set[i])
 	{
-		if (s1 == set[i])
+		if (*s1 == set[i])
 			return (42);
 		else
 			i ++;
