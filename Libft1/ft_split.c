@@ -11,51 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	len_sub(char const *s, char c, char len)
-{
-	int	sol;
-
-	sol = 0;
-	while (*(s + len))
-	{
-		if (*(s + len) == c)
-			return (sol);
-		sol ++;
-		len ++;
-	}
-	return (sol);
-}
-
-static int	filler(char *str, const char *s, int i, int sublen)
-{
-	int	j;
-
-	j = 0;
-	while (j < sublen)
-	{
-		str[j] = s[i];
-		j ++;
-		i ++;
-	}
-	str[j] = '\0';
-	return (j);
-}
-
-static char	**freeing(char **strs, int longitud)
-{
-	int	i;
-
-	i = 0;
-	while (i < longitud)
-	{
-		free(strs[i]);
-		i ++;
-	}
-	free (strs);
-	return (0);
-}
-
-static int	countstr(char const *s, char c)
+static int	contspli(char const *s, char c)
 {
 	char	ult;
 	int		i;
@@ -67,38 +23,95 @@ static int	countstr(char const *s, char c)
 	while (*(s + i))
 	{
 		if (ult == c && s[i] != c)
-			cont ++;
+		{
+			cont++;
+		}
 		ult = s[i];
 		i++;
 	}
 	return (cont);
 }
 
-char	**ft_split(char const *s, char c)
+static int	len_sub(char const *s, char c, int len)
 {
-	int		n_subs;
-	int		j;
-	int		i;
-	char	**strs;
+	int	sol;
+
+	sol = 0;
+	while (*(s + len))
+	{
+		if (*(s + len) == c)
+			return (sol);
+		len++;
+		sol++;
+	}
+	return (sol);
+}
+
+static int	filler(const char *s, char *sol, int pos, int sublen)
+{
+	int	j;
+
+	j = 0;
+	while (j < sublen)
+	{
+		sol[j] = s[pos];
+		j++;
+		pos++;
+	}
+	sol[j] = '\0';
+	return (j);
+}
+
+static char	**liberamos(char **sol, int len)
+{
+	int	i;
 
 	i = 0;
+	while (i < len)
+	{
+		free(sol[i]);
+		i++;
+	}
+	free(sol);
+	return (0);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**sol;
+	int		i;
+	int		j;
+	int		sublen;
+
+	sol = (char **) malloc(sizeof(*sol) * (contspli(s, c) + 1));
+	if (!sol)
+		return (0);
+	i = 0;
 	j = 0;
-	strs = malloc (sizeof(*strs) * (countstr(s, c) + 1));
-	if (!strs)
-		return (NULL);
-	while (s[i])
+	while (*(s + i))
 	{
 		while (s[i] == c)
-			i ++;
+			i++;
 		if (s[i] == '\0')
 			break ;
-		n_subs = len_sub(s, c, i);
-		strs [j] = malloc((sizeof(char) * n_subs) + 1);
-		if (!strs[j])
-			return (freeing(strs, j));
-		i += filler(strs[j], s, i, n_subs);
-		j ++;
+		sublen = len_sub(s, c, i);
+		sol[j] = (char *) malloc(sizeof(char) * (sublen + 1));
+		if (!sol[j])
+			return (liberamos(sol, j));
+		i += filler (s, sol[j], i, sublen);
+		j++;
 	}
-	strs[j] = NULL;
-	return (strs);
+	sol[j] = NULL;
+	return (sol);
 }
+/*int main(void)
+{
+	char	**mondongo;
+	char	s[] = "hola que tal";
+
+	mondongo = ft_split(s, ' ');
+	printf ("%s", mondongo[0]);
+	printf ("%s", mondongo[3]);
+	free (mondongo);
+	return (0);
+}*/

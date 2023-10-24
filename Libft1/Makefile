@@ -36,8 +36,6 @@ FLAGS = -Wall -Wextra -Werror
 REMOVE = rm -f
 CC = cc
 
-
-
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
@@ -47,6 +45,7 @@ bonus: $(BONUS_NAME)
 
 clean:
 	$(REMOVE) $(OBJECTS) $(BONUS_OBJS)
+
 
 fclean: clean
 	$(REMOVE) $(NAME) $(BONUS_NAME)
