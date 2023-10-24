@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-
 char	*mallockin(char *str, int cont, int n, int *i);
 
 char	*ft_itoa(int n)
