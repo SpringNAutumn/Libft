@@ -9,3 +9,10 @@
 /*   Updated: 2023/10/16 19:15:05 by gmarin-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	del(lst->content);
+}
