@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <unistd.h>
 
-static int	recursion(int n, int fd)
+static int	recursion(long int n, int fd)
 {
 	int	aux;
 
@@ -29,13 +29,16 @@ static int	recursion(int n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n < 0)
+	long int	o;
+
+	o = (long int)n;
+	if (o < 0)
 	{
 		write (fd, "-", 1);
-		n *= -1;
+		o *= -1;
 	}
-	if (n == 0)
+	if (o == 0)
 		write (fd, "0", 1);
 	else
-		recursion(n, fd);
+		recursion(o, fd);
 }

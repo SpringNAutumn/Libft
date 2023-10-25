@@ -27,16 +27,16 @@ char	*ft_itoa(int n)
 		cont ++;
 	}
 	str = mallockin(&cont, ni);
-	str[cont] = '\0';
-	cont--;
+	if (!str)
+		return (0);
+	str[cont--] = '\0';
 	if (ni < 0)
 		ni = -ni;
 	if (ni == 0)
-		str[0] = 0;
+		str[0] = '0';
 	while (ni != 0)
 	{
-		str[cont] = (ni % 10) + '0';
-		cont--;
+		str[cont--] = (ni % 10) + '0';
 		ni = ni / 10;
 	}
 	return (str);
@@ -49,10 +49,16 @@ char	*mallockin(int *cont, long int n)
 	if (n < 0)
 	{
 		str = malloc (sizeof (char) * (*cont + 2));
+		if (!str)
+			return (0);
 		str[0] = '-';
 		*cont += 1;
 	}
 	else
+	{
 		str = malloc (sizeof (char) * (*cont + 1));
+		if (!str)
+			return (0);
+	}
 	return (str);
 }
