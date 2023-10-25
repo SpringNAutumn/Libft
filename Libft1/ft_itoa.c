@@ -11,46 +11,48 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*mallockin(char *str, int cont, int n, int *i);
+char	*mallockin(int *cont, long int n);
 
 char	*ft_itoa(int n)
 {
-	int		cont;
-	int		i;
-	char	*str;
-	int		ni;
+	int			cont;
+	char		*str;
+	long int	ni;
 
 	ni = n;
 	cont = 1;
-	i = 0;
-	while (ni / 10 != 0)
-	{
-		ni = n / 10;
-		cont ++;
-	}
-	str = mallockin(str, cont, n, &i);
-	str[cont] = '\0';
-	cont --;
-	if (n == 0)
-		str[0] = 0;
 	while (n / 10 != 0)
 	{
-		str[i] = n / (10 * cont);
 		n = n / 10;
-		cont --;
+		cont ++;
+	}
+	str = mallockin(&cont, ni);
+	str[cont] = '\0';
+	cont--;
+	if (ni < 0)
+		ni = -ni;
+	if (ni == 0)
+		str[0] = 0;
+	while (ni != 0)
+	{
+		str[cont] = (ni % 10) + '0';
+		cont--;
+		ni = ni / 10;
 	}
 	return (str);
 }
 
-char	*mallockin(char *str, int cont, int n, int *i)
+char	*mallockin(int *cont, long int n)
 {
+	char	*str;
+
 	if (n < 0)
 	{
-		str = malloc (sizeof (char *) * (cont + 2));
-		str[*i] = '-';
-		*i += 1;
+		str = malloc (sizeof (char) * (*cont + 2));
+		str[0] = '-';
+		*cont += 1;
 	}
 	else
-		str = malloc (sizeof (char *) * cont + 1);
+		str = malloc (sizeof (char) * (*cont + 1));
 	return (str);
 }
