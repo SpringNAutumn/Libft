@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (ini > fin)
 		return (ft_strdup (""));
 	s3 = malloc (fin - ini + 2);
+	if (!s3)
+		return (0);
 	while (ini <= fin)
 	{
 		s3[i++] = s1[ini];
