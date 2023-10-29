@@ -16,25 +16,53 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*nlst;
 	t_list	*aux;
+	void	*content;
 
-	if (!f || !del || !lst)
+	if (!f || !del)
 		return (NULL);
-	// nlst = NULL;
+	aux = NULL;
 	while (lst)
 	{
-		nlst = ft_lstnew(f(lst->content));
+		content = f(lst->content);
+		nlst = ft_lstnew(content);
 		if (!nlst)
 		{
-			del(f(lst->content));
+			del(content);
 			ft_lstclear(&aux, del);
 			return (NULL);
 		}
-		// we should check that ft_lstadd_back is working properly
 		ft_lstadd_back(&aux, nlst);
-		if (!ft_lstlast(&aux))
-			return (NULL);
 		lst = lst->next;
 	}
 	ft_lstclear(&lst, del);
 	return (aux);
 }
+
+/*
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*sol;
+	t_list	*nodo;
+	void	*content;
+
+	if (!f || !del)
+		return (NULL);
+	sol = NULL;
+	while (lst)
+	{
+		content = (*f)(lst->content);
+		nodo = ft_lstnew(content);
+		if (!nodo)
+		{
+			(*del)(content);
+			ft_lstclear(&sol, del);
+			return (0);
+		}
+		ft_lstadd_back(&sol, nodo);
+		lst = lst->next;
+	}
+	return (sol);
+}
+*/
