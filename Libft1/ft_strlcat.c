@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	dstlen;
-	int	srclen;
-	int	i;
-	int	c;
+	size_t	dstlen;
+	int		srclen;
+	size_t	i;
+	int		c;
 
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);

@@ -30,7 +30,7 @@ BONUSS =		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 BONUS_OBJS = $(BONUSS:.c=.o)
 
 %.o: %.c
-	gcc -c $< -o $@
+	gcc -c $(FLAGS) $< -o $@
 
 FLAGS = -Wall -Wextra -Werror
 REMOVE = rm -f
